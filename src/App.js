@@ -1,8 +1,9 @@
 import './App.css';
-import {client} from "./client"
-import {useState, useEffect} from "react"
-import Recipes from "./components/Recipe/Recipe"
-
+import {client} from "./client";
+import {useState, useEffect} from "react";
+import Recipes from "./components/Recipe/Recipe";
+import SearchAppBar from "./components/Navbar/Navbar";
+import BottomAppBar from "./components/Footer/Footer";
 
 function App() {
   const [recipesArray, setRecipes] = useState([])
@@ -16,6 +17,7 @@ function App() {
 
   return (
     <div className="App">
+      <SearchAppBar/>
       <h1>Hello World!!</h1>
         <section class="section2">
         <div className="intro-image bg-image"></div>
@@ -27,7 +29,7 @@ function App() {
         </div>
       </section>
       <Recipes recipesArray={recipesArray}/>
-
+      <BottomAppBar/>
     </div>
   );
 }
