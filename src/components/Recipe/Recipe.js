@@ -1,20 +1,28 @@
 import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 import "./Recipe.css";
+import RecipePage from"../RecipePage/RecipePage"
 
 export default function Recipe(props) {
   console.log(props);
-  //const { name, featuredImage, description } = props.fields;
   return (
     <div className="post">
-      {props.recipesArray.map((recipe) => {
-        // console.log(from map ${recipe.fields.featuredImage});
-        return (
-          <div>
-            <h4>{recipe.fields.name}</h4>
-            <img url={recipe.fields.featuredImage}></img>
-          </div>
-        );
-      })}
+      {props.recipesArray.map((recipe) => (
+        <Router>
+            <Link to="/">Home</Link>
+            <Link to="/">{recipe.fields.name}</Link>
+            <Switch>
+              <Route exact path="/">
+                <RecipePage recipe={recipe}/>
+              </Route>
+              </Switch>
+        </Router>
+      ))}
     </div>
   );
 }

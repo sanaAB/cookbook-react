@@ -5,6 +5,7 @@ import Recipes from "./components/Recipe/Recipe";
 import SearchAppBar from "./components/Navbar/Navbar";
 import BottomAppBar from "./components/Footer/Footer";
 
+
 function App() {
   const [recipesArray, setRecipes] = useState([])
 
@@ -12,22 +13,15 @@ function App() {
     client.getEntries().then((response) => {
       console.log(response.items);
       setRecipes(response.items);
-     });
+     }).catch(e => {
+      console.log(e);
+  });
  }, []);
 
   return (
     <div className="App">
       <SearchAppBar/>
-      <h1>Hello World!!</h1>
-        <section class="section2">
-        <div className="intro-image bg-image"></div>
-        <div className="intro_title bg-text">
-          <h1><b>Learn to cook your favorite middle eastern meals!</b></h1>
-          <h4>
-            Pick a recepie according to your diet and preference
-          </h4>
-        </div>
-      </section>
+      <Header />
       <Recipes recipesArray={recipesArray}/>
       <BottomAppBar/>
     </div>
