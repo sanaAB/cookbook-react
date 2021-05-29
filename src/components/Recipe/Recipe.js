@@ -13,15 +13,7 @@ export default function Recipe(props) {
   return (
     <div className="post">
       {props.recipesArray.map((recipe) => (
-        <Router>
-            <Link to="/">Home</Link>
-            <Link to="/">{recipe.fields.name}</Link>
-            <Switch>
-              <Route exact path="/">
-                <RecipePage recipe={recipe}/>
-              </Route>
-              </Switch>
-        </Router>
+        <Link to={recipe.sys.id}>{recipe.fields.name}</Link>
       ))}
     </div>
   );

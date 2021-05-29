@@ -1,9 +1,19 @@
 import './App.css';
 import {client} from "./client";
 import {useState, useEffect} from "react";
-import Recipes from "./components/Recipe/Recipe";
+import Home from "./components/Home/Home"
+import Recipe from "./components/Recipe/Recipe";
+import RecipePage from "./components/RecipePage/RecipePage";
+
+import Header from "./components/Header/Header"
 import SearchAppBar from "./components/Navbar/Navbar";
 import BottomAppBar from "./components/Footer/Footer";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 
 function App() {
@@ -22,10 +32,23 @@ function App() {
     <div className="App">
       <SearchAppBar/>
       <Header />
-      <Recipes recipesArray={recipesArray}/>
+      <Router>
+            <Switch>
+              <Route exact path="/">
+                <Home />
+              </Route>
+              <Route exact path="/lunch">
+                <Recipe recipesArray={recipesArray}/>
+              </Route>
+              <Route exact path="/recipe_id">
+                <RecipePage />
+              </Route>
+              </Switch>
+        </Router>
       <BottomAppBar/>
     </div>
   );
 }
 
 export default App;
+/*  */
