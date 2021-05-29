@@ -1,8 +1,9 @@
 import './App.css';
-import {client} from "./client"
-import {useState, useEffect} from "react"
-import Recipes from "./components/Recipe/Recipe"
-import Header from "./components/Header/Header"
+import {client} from "./client";
+import {useState, useEffect} from "react";
+import Recipes from "./components/Recipe/Recipe";
+import SearchAppBar from "./components/Navbar/Navbar";
+import BottomAppBar from "./components/Footer/Footer";
 
 
 function App() {
@@ -19,9 +20,10 @@ function App() {
 
   return (
     <div className="App">
+      <SearchAppBar/>
       <Header />
       <Recipes recipesArray={recipesArray}/>
-
+      <BottomAppBar/>
     </div>
   );
 }
