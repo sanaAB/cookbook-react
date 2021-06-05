@@ -11,41 +11,42 @@ import BottomAppBar from "./components/Footer/Footer";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function App() {
-  const [recipesArray, setRecipes] = useState([]);
+  const [recipesArray, setRecipes] = useState([])
+  const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
 
-  useEffect(() => {
-    client
-      .getEntries()
-      .then((response) => {
-        console.log(response.items);
-        setRecipes(response.items);
-      })
-      .catch((e) => {
-        console.log(e);
-      });
-  }, []);
+  useEffect(()=>{
+    setIsError(false);
+    setIsLoading(true);
+    client.getEntries().then((response) => {
+      console.log(response.items);
+      setRecipes(response.items);
+      setIsLoading(false);
+     }).catch(e => {
+      console.log(e);
+      setIsError(true);
+  });
+ }, []);
 
   return (
     <div className="App">
       <SearchAppBar />
       <Router>
-        <Switch>
-          <Route exact path="/">
-            <Header />
-            <Home />
-          </Route>
-          <Route exact path="/lunch">
-            <Recipe recipesArray={recipesArray} />
-          </Route>
-          <Route exact path="/recipe_id">
-            <RecipePage />
-          </Route>
-        </Switch>
-      </Router>
-      <BottomAppBar />
+            <Switch>
+              <Route exact path="/">
+                <Home />
+              </Route>
+              <Route exact path="/lunch">
+                <Recipe recipesArray={recipesArray} isLoading={isLoading} isError={isError} setIsError= {setIsError}/>
+              </Route>
+              <Route exact path="/:id">
+                <RecipePage recipesArray={recipesArray} isLoading={isLoading} isError={isError} setIsError= {setIsError}/>
+              </Route>
+              </Switch>
+        </Router>
+      <BottomAppBar/>
     </div>
   );
 }
 
 export default App;
-/*  */
