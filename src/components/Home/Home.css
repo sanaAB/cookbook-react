@@ -1,3 +1,13 @@
-#home {
-  height: 800px;
+.showcard {
+  position: relative;
+  padding-top: 30px;
+  display: flex;
+  justify-content: center;
+  bottom: 100px;
+}
+
+.text {
+  color: black;
+  font-family: "Cookie", cursive;
+  font-weight: normal;
 }

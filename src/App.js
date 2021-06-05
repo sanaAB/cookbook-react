@@ -1,20 +1,14 @@
-import './App.css';
-import {client} from "./client";
-import {useState, useEffect} from "react";
-import Home from "./components/Home/Home"
+import "./App.css";
+import { client } from "./client";
+import { useState, useEffect } from "react";
+import Home from "./components/Home/Home";
 import Recipe from "./components/Recipe/Recipe";
 import RecipePage from "./components/RecipePage/RecipePage";
 
-import Header from "./components/Header/Header"
+import Header from "./components/Header/Header";
 import SearchAppBar from "./components/Navbar/Navbar";
 import BottomAppBar from "./components/Footer/Footer";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function App() {
   const [recipesArray, setRecipes] = useState([])
@@ -36,8 +30,7 @@ function App() {
 
   return (
     <div className="App">
-      <SearchAppBar/>
-      <Header />
+      <SearchAppBar />
       <Router>
             <Switch>
               <Route exact path="/">
@@ -57,4 +50,3 @@ function App() {
 }
 
 export default App;
-/*  */
