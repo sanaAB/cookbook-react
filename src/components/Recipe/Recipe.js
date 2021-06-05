@@ -13,7 +13,10 @@ export default function Recipe(props) {
   return (
     <div className="post">
       {props.recipesArray.map((recipe) => (
-        <Link to={recipe.sys.id}>{recipe.fields.name}</Link>
+        <Link to={recipe.sys.id}>{recipe.fields.name}
+          <h2>{ recipe.name }</h2>
+        </Link>
+          
       ))}
     </div>
   );

@@ -3,6 +3,8 @@ import marked from "marked";
 import "./RecipePage.css"
 import { makeStyles, Grid } from "@material-ui/core";
 
+
+
 const useStyles = makeStyles(() => ({
     container: {
       border: "3px solid black",
@@ -16,6 +18,7 @@ const useStyles = makeStyles(() => ({
 
 export default function RecipePage(props){
     const classes = useStyles();
+    
     const {name,description,ingredients, featuredImage} = props.recipe.fields;
     const postDescription = marked(description);
     //const postIngredients = marked(ingredients);

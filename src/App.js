@@ -7,7 +7,7 @@ import RecipePage from "./components/RecipePage/RecipePage";
 
 import Header from "./components/Header/Header"
 import SearchAppBar from "./components/Navbar/Navbar";
-import BottomAppBar from "./components/Footer/Footer";
+import Footer from "./components/Footer/Footer";
 import {
   BrowserRouter as Router,
   Switch,
@@ -40,15 +40,15 @@ function App() {
               <Route exact path="/lunch">
                 <Recipe recipesArray={recipesArray}/>
               </Route>
-              <Route exact path="/recipe_id">
+              <Route exact path="/recipe/:id">
                 <RecipePage />
               </Route>
               </Switch>
         </Router>
-      <BottomAppBar/>
+      <Footer/>
     </div>
   );
 }
 
 export default App;
-/*  */
+

@@ -1,8 +1,15 @@
 .logo{
     width: 7em;
-    border-radius:50% ;
+    border-radius: 100%;
+    padding: 10px;
+
 }
 
 root{
     background-color: blueviolet;
+}
+
+.contact{
+    margin-left: 40px;
+
 }

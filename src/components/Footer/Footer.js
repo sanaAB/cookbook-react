@@ -19,13 +19,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function BottomAppBar() {
+export default function Footer() {
   const classes = useStyles();
 
   return (
     <React.Fragment>
       <CssBaseline />
-      <AppBar position="fixed" color="primary" className={classes.appBar}>
+      <AppBar  color="primary" className={classes.appBar}>
         <Toolbar>
           <div className="socialIcons">
             Follow us on
