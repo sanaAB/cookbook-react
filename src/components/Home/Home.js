@@ -8,6 +8,13 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import { useParams } from "react-router";
 
 const useStyles = makeStyles({
   root: {
@@ -21,13 +28,23 @@ const useStyles = makeStyles({
   },
 });
 
-export default function Home() {
+// onClick={()=>{ 
+//   props.recipesArray.map((recipe) => {
+//   if(recipe.fields.categoryMeal === categoryMeal){
+//     console.log(recipe)
+//     return  recipe;
+// }
+// })}}
+
+export default function Home(props) {
   const classes = useStyles();
 
+  //const {categoryMeal} = useParams();
   return (
     <div>
       <div className="showcard">
-        <Card className={classes.root}>
+      <Link to="/breakfast">
+        <Card className={classes.root} >
           <CardActionArea>
             <CardMedia
               component="img"
@@ -48,8 +65,10 @@ export default function Home() {
             </CardContent>
           </CardActionArea>
         </Card>
+        </Link>
       </div>
       <div className="showcard">
+      <Link to="/lunch">
         <Card className={classes.root}>
           <CardActionArea>
             <CardMedia
@@ -79,8 +98,10 @@ export default function Home() {
             </CardContent>
           </CardActionArea>
         </Card>
+        </Link>
       </div>
       <div className="showcard">
+      <Link to="/dinner">
         <Card className={classes.root}>
           <CardActionArea>
             <CardMedia
@@ -110,6 +131,7 @@ export default function Home() {
             </CardContent>
           </CardActionArea>
         </Card>
+        </Link>
       </div>
     </div>
   );

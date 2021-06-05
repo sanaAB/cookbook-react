@@ -13,15 +13,13 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import BottomAppBar from "./components/Footer/Footer";
 
 function App() {
   const [recipesArray, setRecipes] = useState([])
   const [isLoading, setIsLoading] = useState(false);
-  const [isError, setIsError] = useState(false);
+  //const [isError, setIsError] = useState(false);
 
   useEffect(()=>{
-    setIsError(false);
     setIsLoading(true);
     client.getEntries().then((response) => {
       console.log(response.items);
@@ -29,27 +27,34 @@ function App() {
       setIsLoading(false);
      }).catch(e => {
       console.log(e);
-      setIsError(true);
   });
  }, []);
 
   return (
     <div className="App">
-      <SearchAppBar />
-      <Router>
-            <Switch>
-              <Route exact path="/">
-                <Home />
-              </Route>
-              <Route exact path="/lunch">
-                <Recipe recipesArray={recipesArray} isLoading={isLoading} isError={isError} setIsError= {setIsError}/>
-              </Route>
-              <Route exact path="/:id">
-                <RecipePage recipesArray={recipesArray} isLoading={isLoading} isError={isError} setIsError= {setIsError}/>
-              </Route>
-              </Switch>
-        </Router>
-      <Footer/>
+          <SearchAppBar />
+          {isLoading ? (
+              <div className="load__style">
+                <h4>Loading recipes...</h4>
+                <i className="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+              </div>
+        ):(
+          <Router>
+                <Switch>
+                  <Route exact path="/">
+                    <Header />
+                    <Home recipesArray={recipesArray}/>
+                  </Route>
+                  <Route exact path="/:category">
+                    <Recipe recipesArray={recipesArray}/>
+                  </Route>  
+                  <Route exact path="/:id">
+                    <RecipePage recipesArray={recipesArray}/>
+                  </Route>
+                  </Switch>
+            </Router>
+        )}
+          <Footer/>
     </div>
   );
 }

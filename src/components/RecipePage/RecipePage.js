@@ -15,19 +15,20 @@ const useStyles = makeStyles(() => ({
     },
   }));
 
-export default function RecipePage(props, isLoading, isError, setIsError){
+export default function RecipePage(props){
+    console.log("from page")
     const classes = useStyles();
     //const postIngredients = marked(ingredients);
     const {id} = useParams();
     let singleRecipe;
-    console.log(props.recipesArray)
-     props.recipesArray.map((recipe) => {
-      if(recipe.sys.id === id){
-          return  singleRecipe = recipe.fields;
+     props.recipesArray && props.recipesArray.map((recipe) => {
+     console.log("singleRecipe", singleRecipe);
+     if(recipe.sys.id === id){
+          return (singleRecipe = recipe.fields);
 }
     })
-    console.log(singleRecipe) 
     const postDescription = marked(singleRecipe.description);
+    console.log("")
     return(
         <Grid container className={classes.container}>
             <Grid item xs={12} className={classes.item}> 
