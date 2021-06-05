@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
   appBar: {
     top: "auto",
     bottom: 0,
+    backgroundColor: "silver",
   },
   socialIcon: {
     marginLeft: "5px",
@@ -25,7 +26,11 @@ export default function Footer() {
   return (
     <React.Fragment>
       <CssBaseline />
+<<<<<<< HEAD
       <AppBar  color="primary" className={classes.appBar}>
+=======
+      <AppBar position="fixed" color="inherit" className={classes.appBar}>
+>>>>>>> e57e44bac446691e22b98edf2050112a3b2f79cd
         <Toolbar>
           <div className="socialIcons">
             Follow us on
