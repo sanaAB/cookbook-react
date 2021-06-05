@@ -4,8 +4,6 @@ import "./RecipePage.css"
 import { makeStyles, Grid } from "@material-ui/core";
 import { useParams } from "react-router";
 
-
-
 const useStyles = makeStyles(() => ({
     container: {
       border: "3px solid black",
@@ -19,13 +17,7 @@ const useStyles = makeStyles(() => ({
 
 export default function RecipePage(props, isLoading, isError, setIsError){
     const classes = useStyles();
-<<<<<<< HEAD
-    
-    const {name,description,ingredients, featuredImage} = props.recipe.fields;
-    const postDescription = marked(description);
     //const postIngredients = marked(ingredients);
-    console.log(props.recipe.fields.featuredImage.fields.file.url)
-=======
     const {id} = useParams();
     let singleRecipe;
     console.log(props.recipesArray)
@@ -36,8 +28,6 @@ export default function RecipePage(props, isLoading, isError, setIsError){
     })
     console.log(singleRecipe) 
     const postDescription = marked(singleRecipe.description);
-
->>>>>>> e57e44bac446691e22b98edf2050112a3b2f79cd
     return(
         <Grid container className={classes.container}>
             <Grid item xs={12} className={classes.item}> 
