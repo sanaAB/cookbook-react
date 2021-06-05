@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function BottomAppBar() {
+export default function Footer() {
   const classes = useStyles();
 
   return (

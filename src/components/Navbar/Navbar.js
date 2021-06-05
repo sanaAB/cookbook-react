@@ -9,6 +9,9 @@ import { fade, makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import Button from '@material-ui/core/Button';
+import { Filter } from "@material-ui/icons";
+import HomeIcon from '@material-ui/icons/Home';
+import ContactPhoneIcon from '@material-ui/icons/ContactPhone';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -72,23 +75,14 @@ const useStyles = makeStyles((theme) => ({
       <div className={classes.root}>
         <AppBar position="static">
           <Toolbar>
-          <img className="logo" src="/jls-logo4.PNG"/>
+          <img className="logo" src="/jls-logo3.PNG"/>
             <Typography className={classes.title} variant="h6" noWrap>
               COOKBOOK
             </Typography>
-            <div className={classes.search}>
-              <div className={classes.searchIcon}>
-                <SearchIcon />
-              </div>
-              <InputBase
-                placeholder="Search…"
-                classes={{
-                  root: classes.inputRoot,
-                  input: classes.inputInput,
-                }}
-                inputProps={{ 'aria-label': 'search' }}
-              />
-            </div>
+            <HomeIcon/>
+            <ContactPhoneIcon
+            className="contact"
+            />
             
           </Toolbar>
         </AppBar>

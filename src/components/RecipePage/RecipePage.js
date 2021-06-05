@@ -17,6 +17,7 @@ const useStyles = makeStyles(() => ({
 
 export default function RecipePage(props, isLoading, isError, setIsError){
     const classes = useStyles();
+    //const postIngredients = marked(ingredients);
     const {id} = useParams();
     let singleRecipe;
     console.log(props.recipesArray)
@@ -27,7 +28,6 @@ export default function RecipePage(props, isLoading, isError, setIsError){
     })
     console.log(singleRecipe) 
     const postDescription = marked(singleRecipe.description);
-
     return(
         <Grid container className={classes.container}>
             <Grid item xs={12} className={classes.item}> 
