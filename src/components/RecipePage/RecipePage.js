@@ -20,12 +20,12 @@ export default function RecipePage(props) {
   const classes = useStyles();
   //const postIngredients = marked(ingredients);
 
-  const { id } = useParams();
+  const { slug } = useParams();
   let singleRecipe;
   props.recipesArray &&
     props.recipesArray.map((recipe) => {
       //console.log(props.recipesArray);
-      if (recipe.sys.id === id) {
+      if (recipe.fields.slug === slug) {
         return (singleRecipe = recipe.fields);
       }
     });

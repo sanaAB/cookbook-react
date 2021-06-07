@@ -12,7 +12,7 @@ export default function Recipe(props) {
           (recipe) => recipe.fields.categoryMeal === category.toUpperCase()
         )
         .map((recipe) => (
-          <Link to={`/${category}/${recipe.sys.id}`}>
+          <Link to={`/${category}/${recipe.fields.slug}`}>
             {recipe.fields.name}
             <h2>{recipe.name}</h2>
           </Link>

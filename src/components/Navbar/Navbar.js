@@ -3,7 +3,7 @@ import "./Navbar.css";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import { fade, makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import HomeIcon from "@material-ui/icons/Home";
 import ContactPhoneIcon from "@material-ui/icons/ContactPhone";
 import { Link } from "react-router-dom";
@@ -28,14 +28,14 @@ export default function SearchAppBar() {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <img className="logo" src="/jls-logo3.PNG" />
+          <img className="logo" src="/jls-logo3.PNG" alt="logo" />
           <Typography className={classes.title} variant="h6" noWrap>
             COOKBOOK
           </Typography>
           <Link to="/">
             <HomeIcon />
           </Link>
-          <Link to="/contact">
+          <Link to="/contact-us">
             <ContactPhoneIcon />
           </Link>
         </Toolbar>
