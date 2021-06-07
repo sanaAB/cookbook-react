@@ -4,9 +4,9 @@ import { useState, useEffect } from "react";
 import Home from "./components/Home/Home";
 import Recipe from "./components/Recipe/Recipe";
 import RecipePage from "./components/RecipePage/RecipePage";
-import Header from "./components/Header/Header";
 import SearchAppBar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
+import ContactForm from "./components/Contact/Contact";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -29,19 +29,18 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <SearchAppBar />
-      {isLoading ? (
-        <div className="load__style">
-          <h4>Loading recipes...</h4>
-          <i className="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
-        </div>
-      ) : (
-        <Router>
+    <Router>
+      <div className="App">
+        <SearchAppBar />
+        {isLoading ? (
+          <div className="load__style">
+            <h4>Loading recipes...</h4>
+            <i className="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+          </div>
+        ) : (
           <Switch>
             <Route exact path="/">
-              <Header />
-              <Home recipesArray={recipesArray} />
+              <Home />
             </Route>
             <Route exact path="/:category">
               <Recipe recipesArray={recipesArray} />
@@ -55,11 +54,14 @@ function App() {
             <Route exact path="/dinner/:id">
               <RecipePage recipesArray={recipesArray} />
             </Route>
+            <Route exact path="/contact">
+              <ContactForm />
+            </Route>
           </Switch>
-        </Router>
-      )}
-      <Footer />
-    </div>
+        )}
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

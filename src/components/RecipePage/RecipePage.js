@@ -19,6 +19,7 @@ export default function RecipePage(props) {
   //console.log("from page");
   const classes = useStyles();
   //const postIngredients = marked(ingredients);
+
   const { id } = useParams();
   let singleRecipe;
   props.recipesArray &&
