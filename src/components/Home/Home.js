@@ -29,7 +29,7 @@ const useStyles = makeStyles({
 // }
 // })}}
 
-export default function Home(props) {
+export default function Home() {
   const classes = useStyles();
 
   //const {categoryMeal} = useParams();
