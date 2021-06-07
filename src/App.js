@@ -6,7 +6,7 @@ import Recipe from "./components/Recipe/Recipe";
 import RecipePage from "./components/RecipePage/RecipePage";
 import SearchAppBar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
-import ContactForm from "./components/Contact/Contact";
+import Contact from "./components/Contact/Contact";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -45,17 +45,17 @@ function App() {
             <Route exact path="/:category">
               <Recipe recipesArray={recipesArray} />
             </Route>
-            <Route exact path="/breakfast/:id">
+            <Route exact path="/breakfast/:slug">
               <RecipePage recipesArray={recipesArray} />
             </Route>
-            <Route exact path="/lunch/:id">
+            <Route exact path="/lunch/:slug">
               <RecipePage recipesArray={recipesArray} />
             </Route>
-            <Route exact path="/dinner/:id">
+            <Route exact path="/dinner/:slug">
               <RecipePage recipesArray={recipesArray} />
             </Route>
-            <Route exact path="/contact">
-              <ContactForm />
+            <Route exact path="/contact-us">
+              <Contact />
             </Route>
           </Switch>
         )}
