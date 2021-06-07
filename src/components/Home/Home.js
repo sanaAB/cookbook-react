@@ -1,6 +1,7 @@
 import React from "react";
 import "./Home.css";
 import { makeStyles } from "@material-ui/core/styles";
+import { Grid } from "@material-ui/core";
 import Header from "../Header/Header";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
@@ -36,101 +37,109 @@ export default function Home() {
   return (
     <div>
       <Header />
-      <div className="showcard">
-        <Link to="/breakfast">
-          <Card className={classes.root}>
-            <CardActionArea>
-              <CardMedia
-                component="img"
-                className={classes.media}
-                alt="Breakfast"
-                image="https://images.unsplash.com/photo-1484723091739-30a097e8f929?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=387&q=80"
-                title="Breakfast"
-              />
-              <CardContent>
-                <div className="text">
-                  <Typography gutterBottom variant="h5" component="h2">
-                    Breakfast
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    color="textSecondary"
-                    component="p"
-                  >
-                    Start your day right!
-                  </Typography>
-                </div>
-              </CardContent>
-            </CardActionArea>
-          </Card>
-        </Link>
-      </div>
-      <div className="showcard">
-        <Link to="/lunch">
-          <Card className={classes.root}>
-            <CardActionArea>
-              <CardMedia
-                component="img"
-                className={classes.media}
-                alt="Lunch"
-                image="https://libbyshootsfood.com/wp-content/uploads/2018/12/002_Food_Palm_Beach_Food_Photographer_Luxury_restaurant_Sant_Ambroseus-1.jpg"
-                title="Lunch"
-              />
-              <CardContent>
-                <Typography
-                  className="text"
-                  gutterBottom
-                  variant="h5"
-                  component="h2"
-                >
-                  Lunch
-                </Typography>
-                <Typography
-                  className="text2"
-                  variant="body2"
-                  color="textSecondary"
-                  component="p"
-                >
-                  Lunch blabla
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-          </Card>
-        </Link>
-      </div>
-      <div className="showcard">
-        <Link to="/dinner">
-          <Card className={classes.root}>
-            <CardActionArea>
-              <CardMedia
-                component="img"
-                className={classes.media}
-                alt="Dinner"
-                image="https://dl.splento.com/cdn/2019/10/11/o_1d1nuei2m120v2p0198et02uf1j.jpg"
-                title="Dinner"
-              />
-              <CardContent>
-                <Typography
-                  className="text"
-                  gutterBottom
-                  variant="h5"
-                  component="h2"
-                >
-                  Dinner
-                </Typography>
-                <Typography
-                  className="text2"
-                  variant="body2"
-                  color="textSecondary"
-                  component="p"
-                >
-                  Dinner blabla
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-          </Card>
-        </Link>
-      </div>
+      <Grid container>
+        <Grid item xs={12} sm={12} md={4} lg={4}>
+          <div className="showcard">
+            <Link to="/breakfast">
+              <Card className={classes.root}>
+                <CardActionArea>
+                  <CardMedia
+                    component="img"
+                    className={classes.media}
+                    alt="Breakfast"
+                    image="https://images.unsplash.com/photo-1484723091739-30a097e8f929?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=387&q=80"
+                    title="Breakfast"
+                  />
+                  <CardContent>
+                    <div className={classes.text}>
+                      <Typography gutterBottom variant="h5" component="h2">
+                        Breakfast
+                      </Typography>
+                      <Typography
+                        variant="body2"
+                        color="textSecondary"
+                        component="p"
+                      >
+                        Start your day right!
+                      </Typography>
+                    </div>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+            </Link>
+          </div>
+        </Grid>
+        <Grid item xs={12} sm={12} md={4} lg={4}>
+          <div className="showcard">
+            <Link to="/lunch">
+              <Card className={classes.root}>
+                <CardActionArea>
+                  <CardMedia
+                    component="img"
+                    className={classes.media}
+                    alt="Lunch"
+                    image="https://libbyshootsfood.com/wp-content/uploads/2018/12/002_Food_Palm_Beach_Food_Photographer_Luxury_restaurant_Sant_Ambroseus-1.jpg"
+                    title="Lunch"
+                  />
+                  <CardContent>
+                    <Typography
+                      className="text"
+                      gutterBottom
+                      variant="h5"
+                      component="h2"
+                    >
+                      Lunch
+                    </Typography>
+                    <Typography
+                      className="text2"
+                      variant="body2"
+                      color="textSecondary"
+                      component="p"
+                    >
+                      Lunch blabla
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+            </Link>
+          </div>
+        </Grid>
+        <Grid item xs={12} sm={12} md={4} lg={4}>
+          <div className="showcard">
+            <Link to="/dinner">
+              <Card className={classes.root}>
+                <CardActionArea>
+                  <CardMedia
+                    component="img"
+                    className={classes.media}
+                    alt="Dinner"
+                    image="https://dl.splento.com/cdn/2019/10/11/o_1d1nuei2m120v2p0198et02uf1j.jpg"
+                    title="Dinner"
+                  />
+                  <CardContent>
+                    <Typography
+                      className="text"
+                      gutterBottom
+                      variant="h5"
+                      component="h2"
+                    >
+                      Dinner
+                    </Typography>
+                    <Typography
+                      className="text2"
+                      variant="body2"
+                      color="textSecondary"
+                      component="p"
+                    >
+                      Dinner blabla
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+            </Link>
+          </div>
+        </Grid>
+      </Grid>
     </div>
   );
 }
