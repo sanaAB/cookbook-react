@@ -7,38 +7,38 @@ import { makeStyles } from "@material-ui/core/styles";
 import HomeIcon from "@material-ui/icons/Home";
 import ContactPhoneIcon from "@material-ui/icons/ContactPhone";
 import { Link } from "react-router-dom";
-import IconButton from '@material-ui/core/IconButton';
+import IconButton from "@material-ui/core/IconButton";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
-
-navbar:{
+  navbar: {
     top: 0,
     bottom: "auto",
-    backgroundColor:"grey",
-},
-
+    background: "linear-gradient(45deg, #7DA588 30%, #435849 70%)",
+  },
   title: {
-    flexGrow: 1,
+    flexGrow: 30,
+    fontFamily: "Raleway, Arial",
     display: "none",
     [theme.breakpoints.up("sm")]: {
       display: "block",
     },
   },
-
   icons: {
-    
+    flexGrow: 1,
     display: "flex",
-    
-    justifyContent: "flex-end", 
+    justifyContent: "flex-end",
   },
-
-  icon:{
+  icon: {
     color: "white",
-  }
-
+    height: 50,
+    width: 50,
+    padding: 5,
+    boxShadow:
+      "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
+  },
 }));
 
 export default function SearchAppBar() {
@@ -48,20 +48,20 @@ export default function SearchAppBar() {
     <div className={classes.root}>
       <AppBar color="inherit" className={classes.navbar} position="static">
         <Toolbar>
-          <img className="logo" src="/jls-logo3.PNG" alt="logo" edge="start"/>
+          <img className="logo" src="/jls-logo3.PNG" alt="logo" edge="start" />
           <Typography className={classes.title} variant="h6" noWrap>
-            COOKBOOK
+            Group 1's glorious COOKBOOK
           </Typography>
-          <div className={classes.icons} >
+          <div className={classes.icons}>
             <Link to="/">
               <IconButton color="inherit" edge="end">
-              <HomeIcon className={classes.icon} />
+                <HomeIcon className={classes.icon} />
               </IconButton>
             </Link>
             <Link to="/contact-us">
-            <IconButton color="inherit" edge="end">
-              <ContactPhoneIcon className={classes.icon}  />
-            </IconButton>
+              <IconButton color="inherit" edge="end">
+                <ContactPhoneIcon className={classes.icon} />
+              </IconButton>
             </Link>
           </div>
         </Toolbar>
