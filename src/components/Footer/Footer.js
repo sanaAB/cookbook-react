@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
   appBar: {
     top: "auto",
     bottom: 0,
+    maxHeight: 60,
     background: "linear-gradient(45deg, #435849 50%, #7DA588 80%)",
     color: "white",
   },
