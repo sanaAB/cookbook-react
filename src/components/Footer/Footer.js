@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
   appBar: {
     top: "auto",
     bottom: 0,
-    backgroundColor: "silver",
+    backgroundColor: "grey",
   },
   socialIcon: {
     marginLeft: "5px",

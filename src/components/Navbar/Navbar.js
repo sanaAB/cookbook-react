@@ -7,11 +7,19 @@ import { fade, makeStyles } from "@material-ui/core/styles";
 import HomeIcon from "@material-ui/icons/Home";
 import ContactPhoneIcon from "@material-ui/icons/ContactPhone";
 import { Link } from "react-router-dom";
+import IconButton from '@material-ui/core/IconButton';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
+
+navbar:{
+    top: 0,
+    bottom: "auto",
+    backgroundColor:"grey",
+},
+
   title: {
     flexGrow: 1,
     display: "none",
@@ -19,6 +27,18 @@ const useStyles = makeStyles((theme) => ({
       display: "block",
     },
   },
+
+  icons: {
+    
+    display: "flex",
+    
+    justifyContent: "flex-end", 
+  },
+
+  icon:{
+    color: "white",
+  }
+
 }));
 
 export default function SearchAppBar() {
@@ -26,18 +46,24 @@ export default function SearchAppBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar color="inherit" className={classes.navbar} position="static">
         <Toolbar>
-          <img className="logo" src="/jls-logo3.PNG" />
+          <img className="logo" src="/jls-logo3.PNG"  edge="start"/>
           <Typography className={classes.title} variant="h6" noWrap>
             COOKBOOK
           </Typography>
-          <Link to="/">
-            <HomeIcon />
-          </Link>
-          <Link to="/contact">
-            <ContactPhoneIcon />
-          </Link>
+          <div className={classes.icons} >
+            <Link to="/">
+              <IconButton color="inherit" edge="end">
+              <HomeIcon className={classes.icon} />
+              </IconButton>
+            </Link>
+            <Link to="/contact">
+            <IconButton color="inherit" edge="end">
+              <ContactPhoneIcon className={classes.icon}  />
+            </IconButton>
+            </Link>
+          </div>
         </Toolbar>
       </AppBar>
     </div>
