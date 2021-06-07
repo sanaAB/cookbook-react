@@ -1,6 +1,7 @@
 import React from "react";
 import "./Home.css";
 import { makeStyles } from "@material-ui/core/styles";
+import Header from "../Header/Header";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardContent from "@material-ui/core/CardContent";
@@ -34,6 +35,7 @@ export default function Home(props) {
   //const {categoryMeal} = useParams();
   return (
     <div>
+      <Header />
       <div className="showcard">
         <Link to="/breakfast">
           <Card className={classes.root}>
