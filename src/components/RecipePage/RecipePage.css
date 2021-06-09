@@ -17,11 +17,12 @@
     justify-content: space-around;
     flex-wrap: wrap;
     flex-direction: column;
-    align-items: flex-start;  
+    align-items: flex-start; 
+    margin-bottom: 50px; 
 }
 @media only screen and (min-width: 450px) {
     .recipe_image{
         height:auto;
-        width: 450px;
+        width: 300px;
     }
   }

@@ -42,6 +42,9 @@ function App() {
             <Route exact path="/">
               <Home />
             </Route>
+            <Route exact path="/contact-us">
+              <Contact />
+            </Route>
             <Route exact path="/:category">
               <Recipe recipesArray={recipesArray} />
             </Route>
@@ -53,9 +56,6 @@ function App() {
             </Route>
             <Route exact path="/dinner/:slug">
               <RecipePage recipesArray={recipesArray} />
-            </Route>
-            <Route exact path="/contact-us">
-              <Contact />
             </Route>
           </Switch>
         )}

@@ -12,10 +12,18 @@ export default function Recipe(props) {
           (recipe) => recipe.fields.categoryMeal === category.toUpperCase()
         )
         .map((recipe) => (
+          <li className="recipes_list">
           <Link to={`/${category}/${recipe.fields.slug}`}>
-            {recipe.fields.name}
-            <h2>{recipe.name}</h2>
+            <h4>{recipe.fields.name}</h4>
+            {recipe.fields.featuredImage && (
+            <img
+              className="recipe_image"
+              src={recipe.fields.featuredImage.fields.file.url}
+              alt={recipe.fields.name}
+            />
+          )}
           </Link>
+          </li>
         ))}
     </div>
   );
