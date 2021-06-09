@@ -16,23 +16,19 @@ const useStyles = makeStyles(() => ({
 }));
 
 export default function RecipePage(props) {
-  //console.log("from page");
   const classes = useStyles();
-  //const postIngredients = marked(ingredients);
 
   const { slug } = useParams();
   let singleRecipe;
+  //check if the array is not empty
   props.recipesArray &&
     props.recipesArray.map((recipe) => {
-      //console.log(props.recipesArray);
       if (recipe.fields.slug === slug) {
         return (singleRecipe = recipe.fields);
       }
     });
   console.log(singleRecipe);
   const postDescription = marked(singleRecipe.description);
-  //console.log("");
-
   return (
     <Grid container className={classes.container}>
       <Grid item xs={12} className={classes.item}>
@@ -45,11 +41,13 @@ export default function RecipePage(props) {
               alt={singleRecipe.name}
             />
           )}
+          <h4>ingredients</h4>
           <section className="ingredients">
             {singleRecipe.ingredients.map((ingredient) => (
               <li>{ingredient}</li>
             ))}
           </section>
+          <h4>Description</h4>
           {
             <section
               className="description_text"

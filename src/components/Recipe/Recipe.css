@@ -1,7 +1,31 @@
+
 .post{
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
+    margin-bottom: 70px;
 }
+
+.recipes_list{
+    text-align: left;
+    padding: 5px;
+    border-style:solid ;
+    margin-bottom: 10px;
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+@media only screen and (min-width: 450px) {
+    .recipe_image{
+        height:auto;
+        width: 300px;
+    }
+    .post{
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-bottom: 70px;
+
+    }
+  }
