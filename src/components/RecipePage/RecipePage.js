@@ -15,9 +15,9 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-export default function RecipePage(props) {
+export default function RecipePage(props, {isLoading}) {
   const classes = useStyles();
-
+  console.log(props);
   const { slug } = useParams();
   let singleRecipe;
   //check if the array is not empty
@@ -27,34 +27,47 @@ export default function RecipePage(props) {
         return (singleRecipe = recipe.fields);
       }
     });
-  console.log(singleRecipe);
-  const postDescription = marked(singleRecipe.description);
+  console.log(props.isLoading);
+  let postDescription = "";
+  if(singleRecipe){
+    postDescription= marked(singleRecipe.description)
+  }
   return (
     <Grid container className={classes.container}>
       <Grid item xs={12} className={classes.item}>
-        <div className="recipe_style">
-          <h2>{singleRecipe.name}</h2>
-          {singleRecipe.featuredImage && (
-            <img
-              className="recipe_image"
-              src={singleRecipe.featuredImage.fields.file.url}
-              alt={singleRecipe.name}
-            />
-          )}
-          <h4>ingredients</h4>
-          <section className="ingredients">
-            {singleRecipe.ingredients.map((ingredient) => (
-              <li>{ingredient}</li>
-            ))}
-          </section>
-          <h4>Description</h4>
-          {
-            <section
-              className="description_text"
-              dangerouslySetInnerHTML={{ __html: postDescription }}
-            />
-          }
-        </div>
+      { isLoading ? (
+      <div className="load__style">
+        <h4>Loading recipe...</h4>
+        <i className="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+      </div>
+    ) : singleRecipe ? (
+      <div className="recipe_style">
+      <h2 className="hhh">{singleRecipe.name}</h2>
+      {singleRecipe.featuredImage && (
+        <img
+          className="recipe_image"
+          src={singleRecipe.featuredImage.fields.file.url}
+          alt={singleRecipe.name}
+        />
+      )}
+      <h2 className="hhh">ingredients</h2>
+      <section className="ingredients">
+        {singleRecipe.ingredients.map((ingredient) => (
+          <li>{ingredient}</li>
+        ))}
+        <i></i>
+      </section>
+      <h2 className="hhh">Description</h2>
+      {
+        <section
+          className="description_text"
+          dangerouslySetInnerHTML={{ __html: postDescription }}
+        />
+      }
+    </div>
+    ) : (
+      <h1> Unable to load recipe</h1>
+    )}
       </Grid>
     </Grid>
   );

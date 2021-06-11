@@ -14,7 +14,7 @@ export default function Recipe(props) {
         .map((recipe) => (
           <li className="recipes_list">
           <Link to={`/${category}/${recipe.fields.slug}`}>
-            <h4>{recipe.fields.name}</h4>
+            <h2 className="hhh">{recipe.fields.name}</h2>
             {recipe.fields.featuredImage && (
             <img
               className="recipe_image"
