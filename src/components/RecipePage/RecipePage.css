@@ -20,6 +20,9 @@
     align-items: flex-start; 
     margin-bottom: 50px; 
 }
+.hhh{
+    font-family:"Cookie", cursive;
+}
 @media only screen and (min-width: 450px) {
     .recipe_image{
         height:auto;
