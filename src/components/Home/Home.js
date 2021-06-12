@@ -9,6 +9,7 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
 import { Link } from "react-router-dom";
+import asparagusImage from "./asparagus.jpg";
 
 const useStyles = makeStyles({
   root: {
@@ -37,7 +38,14 @@ export default function Home() {
   return (
     <div>
       <Header />
-      <Grid container>
+      <Grid
+        container
+        className="home"
+        style={{
+          backgroundImage: "url(" + asparagusImage + ")",
+          backgroundSize: "cover",
+        }}
+      >
         <Grid item xs={12} sm={12} md={4} lg={4}>
           <div className="showcard">
             <Link to="/breakfast">
@@ -52,16 +60,7 @@ export default function Home() {
                   />
                   <CardContent>
                     <div className={classes.text}>
-                      <Typography gutterBottom variant="h5" component="h2">
-                        Breakfast
-                      </Typography>
-                      <Typography
-                        variant="body2"
-                        color="textSecondary"
-                        component="p"
-                      >
-                        Start your day right!
-                      </Typography>
+                      <span className="cardtitle">Breakfast</span>
                     </div>
                   </CardContent>
                 </CardActionArea>
@@ -82,22 +81,7 @@ export default function Home() {
                     title="Lunch"
                   />
                   <CardContent>
-                    <Typography
-                      className="text"
-                      gutterBottom
-                      variant="h5"
-                      component="h2"
-                    >
-                      Lunch
-                    </Typography>
-                    <Typography
-                      className="text2"
-                      variant="body2"
-                      color="textSecondary"
-                      component="p"
-                    >
-                      Lunch blabla
-                    </Typography>
+                    <span className="cardtitle">Lunch</span>
                   </CardContent>
                 </CardActionArea>
               </Card>
@@ -117,22 +101,7 @@ export default function Home() {
                     title="Dinner"
                   />
                   <CardContent>
-                    <Typography
-                      className="text"
-                      gutterBottom
-                      variant="h5"
-                      component="h2"
-                    >
-                      Dinner
-                    </Typography>
-                    <Typography
-                      className="text2"
-                      variant="body2"
-                      color="textSecondary"
-                      component="p"
-                    >
-                      Dinner blabla
-                    </Typography>
+                    <span className="cardtitle">Dinner</span>
                   </CardContent>
                 </CardActionArea>
               </Card>

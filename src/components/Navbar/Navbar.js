@@ -16,11 +16,13 @@ const useStyles = makeStyles((theme) => ({
   navbar: {
     top: 0,
     bottom: "auto",
-    background: "linear-gradient(45deg, #7DA588 30%, #435849 70%)",
+    // background: "linear-gradient(45deg, #f9da9f 5%, #ffedcb 60%)",
   },
   title: {
     flexGrow: 30,
-    fontFamily: "Raleway, Arial",
+    fontFamily: "Cookie, cursive",
+    fontSize: 23,
+    color: "black",
     display: "none",
     [theme.breakpoints.up("sm")]: {
       display: "block",
@@ -32,12 +34,12 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "flex-end",
   },
   icon: {
-    color: "white",
-    height: 50,
-    width: 50,
+    color: "black",
+    height: 40,
+    width: 40,
     padding: 5,
-    boxShadow:
-      "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
+    // boxShadow:
+    // "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
   },
 }));
 
@@ -49,9 +51,10 @@ export default function SearchAppBar() {
       <AppBar color="inherit" className={classes.navbar} position="static">
         <Toolbar>
           <img className="logo" src="/jls-logo3.PNG" alt="logo" edge="start" />
-          <Typography className={classes.title} variant="h6" noWrap>
-            Group 1's glorious COOKBOOK
-          </Typography>
+          <span className={classes.title}>
+            “I cook with wine, sometimes I even add it to the food.” ― W.C.
+            Fields
+          </span>
           <div className={classes.icons}>
             <Link to="/">
               <IconButton color="inherit" edge="end">

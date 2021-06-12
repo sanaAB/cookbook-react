@@ -1,31 +1,60 @@
-
-.post{
-    margin-bottom: 70px;
+.post {
+  margin: 40px 10px;
+  font-family: "Cookie", cursive;
+  font-size: 35px;
 }
 
-.recipes_list{
-    text-align: left;
-    padding: 5px;
-    border-style:solid ;
-    margin-bottom: 10px;
-    list-style-type: none;
+.recipes_list {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  /* border: 1px solid grey; */
+  /* margin-bottom: 10px; */
+  list-style-type: none;
 }
-a{
-    text-decoration: none;
-    color: black;
+
+/* .recipeImage {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: auto;
+  height: 100px;
+  box-shadow: 0 0 2px 1px grey;
+} */
+
+.table-img {
+  height: 150px;
+  width: 150px;
+  overflow: hidden;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 100%;
 }
+
+.table-img img {
+  max-height: 140px;
+  max-width: none;
+  min-width: 100%;
+  min-height: 100px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
 @media only screen and (min-width: 450px) {
-    .recipe_image{
-        height:auto;
-        width: 300px;
-    }
-    .post{
-        display: flex;
-        justify-content: space-around;
-        flex-direction: row;
-        flex-wrap: wrap;
-        width: 100%;
-        margin-bottom: 70px;
-
-    }
+  .recipeImage {
+    height: auto;
+    width: 100px;
   }
+  .post {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 70px;
+  }
+}

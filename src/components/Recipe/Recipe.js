@@ -13,16 +13,18 @@ export default function Recipe(props) {
         )
         .map((recipe) => (
           <li className="recipes_list">
-          <Link to={`/${category}/${recipe.fields.slug}`}>
-            <h2 className="hhh">{recipe.fields.name}</h2>
-            {recipe.fields.featuredImage && (
-            <img
-              className="recipe_image"
-              src={recipe.fields.featuredImage.fields.file.url}
-              alt={recipe.fields.name}
-            />
-          )}
-          </Link>
+            <Link to={`/${category}/${recipe.fields.slug}`}>
+              <div id="title">{recipe.fields.name}</div>
+              {recipe.fields.featuredImage && (
+                <div className="table-img">
+                  <img
+                    className="table-img img"
+                    src={recipe.fields.featuredImage.fields.file.url}
+                    alt={recipe.fields.name}
+                  />
+                </div>
+              )}
+            </Link>
           </li>
         ))}
     </div>
