@@ -6,7 +6,7 @@
   opacity: 40%;
   object-fit: cover;
   contain: content;
-  background-image:url("./food.jpg");
+  background-image:url(./food.jpg);
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
@@ -39,7 +39,7 @@
   /* The image used 
 */
   /* Add the blur effect */
-  background-image: url("food.jpg");
+  background-image: url(./food.jpg);
   filter: blur(4px);
   -webkit-filter: blur(5px);
   background-position: center;
