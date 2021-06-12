@@ -1,9 +1,9 @@
 .intro-image {
   padding: 1px;
   /* border: 1px solid rgb(100, 98, 98); */
-  height: 230px;
+  height: 260px;
   width: 100%;
-  opacity: 60%;
+  opacity: 40%;
   object-fit: cover;
   contain: content;
   background-size: 100% 100%;
@@ -18,7 +18,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  opacity: 0.3;
+  opacity: 0.2;
 }
 
 .intro_title {
@@ -28,7 +28,7 @@
 }
 .section2 {
   position: relative;
-  margin-bottom: 130px;
+  /* margin-bottom: 130px; */
 }
 #slogan {
   margin: 0 auto;
@@ -50,7 +50,7 @@
 .bg-text {
   color: black;
   font-family: "Cookie", cursive;
-  font-size: 30px;
+  font-size: 35px;
   font-weight: normal;
   margin-bottom: 0px;
   line-height: normal;

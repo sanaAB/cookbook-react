@@ -3,5 +3,15 @@
   padding-top: 30px;
   display: flex;
   justify-content: center;
-  bottom: 140px;
+  bottom: 80px;
+}
+
+.home {
+  padding-top: 80px;
+}
+
+.cardtitle {
+  font-family: "Cookie", cursive;
+  font-size: 35px;
+  font-weight: normal;
 }

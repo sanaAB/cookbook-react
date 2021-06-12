@@ -14,8 +14,8 @@ const useStyles = makeStyles((theme) => ({
     top: "auto",
     bottom: 0,
     maxHeight: 60,
-    background: "linear-gradient(45deg, #435849 50%, #7DA588 80%)",
-    color: "white",
+    // background: "linear-gradient(45deg, #f9da9f 5%, #ffedcb 60%)",
+    color: "black",
   },
   socialIcon: {
     marginLeft: "5px",
@@ -26,31 +26,28 @@ export default function Footer() {
   const classes = useStyles();
 
   return (
-    <React.Fragment>
-      <CssBaseline />
-      <AppBar position="fixed" color="inherit" className={classes.appBar}>
-        <Toolbar>
-          <div className="socialIcons">
-            Follow us on
-            <FacebookIcon
-              href=""
-              className={classes.socialIcon}
-              fontSize="large"
-            />
-            <InstagramIcon
-              href=""
-              className={classes.socialIcon}
-              fontSize="large"
-            />
-            <TwitterIcon
-              href=""
-              className={classes.socialIcon}
-              fontSize="large"
-            />
-          </div>
-          <ScrollToTop smooth id="scroll" />
-        </Toolbar>
-      </AppBar>
-    </React.Fragment>
+    <AppBar position="none" color="inherit" className={classes.appBar}>
+      <Toolbar>
+        <div className="socialIcons">
+          Follow us on
+          <FacebookIcon
+            href=""
+            className={classes.socialIcon}
+            fontSize="large"
+          />
+          <InstagramIcon
+            href=""
+            className={classes.socialIcon}
+            fontSize="large"
+          />
+          <TwitterIcon
+            href=""
+            className={classes.socialIcon}
+            fontSize="large"
+          />
+        </div>
+        <ScrollToTop smooth id="scroll" />
+      </Toolbar>
+    </AppBar>
   );
 }
