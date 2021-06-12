@@ -35,12 +35,7 @@ export default function RecipePage(props, { isLoading }) {
   return (
     <Grid container className={classes.container}>
       <Grid item xs={12} className={classes.item}>
-        {isLoading ? (
-          <div className="load__style">
-            <h4>Loading recipe...</h4>
-            <i className="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
-          </div>
-        ) : singleRecipe ? (
+        { singleRecipe ? (
           <div className="recipe_style">
             <div className="hhh">{singleRecipe.name}</div>
             {singleRecipe.featuredImage && (
