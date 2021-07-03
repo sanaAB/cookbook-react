@@ -7,7 +7,6 @@ import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
-import Typography from "@material-ui/core/Typography";
 import { Link } from "react-router-dom";
 import asparagusImage from "./asparagus.jpg";
 
@@ -23,18 +22,9 @@ const useStyles = makeStyles({
   },
 });
 
-// onClick={()=>{
-//   props.recipesArray.map((recipe) => {
-//   if(recipe.fields.categoryMeal === categoryMeal){
-//     console.log(recipe)
-//     return  recipe;
-// }
-// })}}
 
 export default function Home() {
   const classes = useStyles();
-
-  //const {categoryMeal} = useParams();
   return (
     <div>
       <Header />

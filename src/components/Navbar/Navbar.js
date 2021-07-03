@@ -2,7 +2,6 @@ import React from "react";
 import "./Navbar.css";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import HomeIcon from "@material-ui/icons/Home";
 import ContactPhoneIcon from "@material-ui/icons/ContactPhone";
@@ -16,7 +15,6 @@ const useStyles = makeStyles((theme) => ({
   navbar: {
     top: 0,
     bottom: "auto",
-    // background: "linear-gradient(45deg, #f9da9f 5%, #ffedcb 60%)",
   },
   title: {
     flexGrow: 30,

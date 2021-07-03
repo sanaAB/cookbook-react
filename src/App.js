@@ -17,7 +17,7 @@ function App() {
     async function fetchRecipes() {
     setIsLoading(true);
     try {
-      axios.get("http://localhost:8080/api").then((result) => {
+      await axios.get("http://localhost:8080/api").then((result) => {
         const data = result.data;
         setRecipes(data);
         console.log(data);
