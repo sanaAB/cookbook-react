@@ -64,6 +64,7 @@ export default function SearchAppBar() {
                 <ContactPhoneIcon className={classes.icon} />
               </IconButton>
             </Link>
+            
           </div>
         </Toolbar>
       </AppBar>
