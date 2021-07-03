@@ -1,0 +1,25 @@
+
+
+/*li{
+    text-decoration: none;
+}*/
+
+.body{
+    align-items: center;
+}
+
+.about-section {
+    padding: 50px;
+    text-align: center;
+    background-color: #474e5d;
+    color: white;
+  }
+
+  ul {
+    list-style-type: none;
+    margin-right: 20px;
+  }
+
+  h3 {
+    margin-top: 50px;
+  }
