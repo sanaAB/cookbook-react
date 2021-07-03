@@ -3,6 +3,8 @@ import marked from "marked";
 import "./RecipePage.css";
 import { makeStyles, Grid } from "@material-ui/core";
 import { useParams } from "react-router";
+import Button from '@material-ui/core/Button';
+
 
 const useStyles = makeStyles(() => ({
   container: {
@@ -11,7 +13,6 @@ const useStyles = makeStyles(() => ({
   },
   item: {
     padding: "10px",
-    // border: "1px solid black",
   },
 }));
 
@@ -23,8 +24,8 @@ export default function RecipePage(props, { isLoading }) {
   //check if the array is not empty
   props.recipesArray &&
     props.recipesArray.map((recipe) => {
-      if (recipe.fields.slug === slug) {
-        return (singleRecipe = recipe.fields);
+      if (recipe.slug === slug) {
+        return (singleRecipe = recipe);
       }
     });
   console.log(props.isLoading);
@@ -35,21 +36,19 @@ export default function RecipePage(props, { isLoading }) {
   return (
     <Grid container className={classes.container}>
       <Grid item xs={12} className={classes.item}>
-        {isLoading ? (
-          <div className="load__style">
-            <h4>Loading recipe...</h4>
-            <i className="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
-          </div>
-        ) : singleRecipe ? (
+        { singleRecipe ? (
           <div className="recipe_style">
             <div className="hhh">{singleRecipe.name}</div>
-            {singleRecipe.featuredImage && (
+            {singleRecipe.image && (
               <img
                 className="recipe_image"
-                src={singleRecipe.featuredImage.fields.file.url}
+                src={singleRecipe.image}
                 alt={singleRecipe.name}
               />
             )}
+              <Button variant="contained" color="secondary" className={classes.button}>
+                Order this recipe now!
+              </Button>
             <h2 className="hhh">ingredients</h2>
             <section className="ingredients">
               {singleRecipe.ingredients.map((ingredient) => (
@@ -59,10 +58,12 @@ export default function RecipePage(props, { isLoading }) {
             </section>
             <h2 className="hhh">Description</h2>
             {
+            <div>
               <section
                 className="description_text"
                 dangerouslySetInnerHTML={{ __html: postDescription }}
               />
+             </div>
             }
           </div>
         ) : (
@@ -73,7 +74,3 @@ export default function RecipePage(props, { isLoading }) {
   );
 }
 
-//const {name, ingredients } = singleRecipe;
-
-//const postIngredients = marked(ingredients);
-//console.log(props.recipe.fields.featuredImage.fields.file.url)

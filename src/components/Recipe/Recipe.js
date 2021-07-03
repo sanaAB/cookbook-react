@@ -9,18 +9,18 @@ export default function Recipe(props) {
     <div className="post">
       {props.recipesArray
         .filter(
-          (recipe) => recipe.fields.categoryMeal === category.toUpperCase()
+          (recipe) => recipe.category === category.toUpperCase()
         )
         .map((recipe) => (
           <li className="recipes_list">
-            <Link to={`/${category}/${recipe.fields.slug}`}>
-              <div id="title">{recipe.fields.name}</div>
-              {recipe.fields.featuredImage && (
+            <Link to={`/${category}/${recipe.slug}`}>
+              <div id="title">{recipe.name}</div>
+              {recipe.image && (
                 <div className="table-img">
                   <img
                     className="table-img img"
-                    src={recipe.fields.featuredImage.fields.file.url}
-                    alt={recipe.fields.name}
+                    src={recipe.image}
+                    alt={recipe.name}
                   />
                 </div>
               )}

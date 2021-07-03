@@ -1,5 +1,4 @@
 import "./App.css";
-import { client } from "./client";
 import axios from 'axios'
 import { useState, useEffect } from "react";
 import Home from "./components/Home/Home";
@@ -14,21 +13,23 @@ import About from "./components/About/About";
 function App() {
   const [recipesArray, setRecipes] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  //const [isError, setIsError] = useState(false);
 
   useEffect(() => {
+    async function fetchRecipes() {
     setIsLoading(true);
-    client
-      .getEntries()
-      .then((response) => {
-        console.log(response.items);
-        setRecipes(response.items);
+    try {
+      axios.get("http://localhost:8080/api").then((result) => {
+        const data = result.data;
+        setRecipes(data);
+        console.log(data);
         setIsLoading(false);
-      })
-      .catch((e) => {
-        console.log(e);
       });
-  }, []);
+    } catch (error) {
+      alert("No results");
+    }
+  }
+  fetchRecipes();
+}, []);
 
   return (
     <Router>
