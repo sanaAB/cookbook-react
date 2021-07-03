@@ -1,5 +1,6 @@
 import React from "react";
 import "./Footer.css";
+
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -8,6 +9,8 @@ import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import ScrollToTop from "react-scroll-to-top";
+import Button from "@material-ui/core/Button";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -45,8 +48,13 @@ export default function Footer() {
             className={classes.socialIcon}
             fontSize="large"
           />
+          
         </div>
         <ScrollToTop smooth id="scroll" />
+        <Link to="/About">
+          <Button   type="submit">About Us</Button>
+        </Link>
+        
       </Toolbar>
     </AppBar>
   );

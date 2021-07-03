@@ -1,5 +1,6 @@
 import "./App.css";
 import { client } from "./client";
+import axios from 'axios'
 import { useState, useEffect } from "react";
 import Home from "./components/Home/Home";
 import Recipe from "./components/Recipe/Recipe";
@@ -8,6 +9,7 @@ import SearchAppBar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import Contact from "./components/Contact/Contact";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import About from "./components/About/About";
 
 function App() {
   const [recipesArray, setRecipes] = useState([]);
@@ -44,6 +46,9 @@ function App() {
             </Route>
             <Route exact path="/contact-us">
               <Contact />
+            </Route>
+            <Route exact path="/About">
+              <About />
             </Route>
             <Route exact path="/:category">
               <Recipe recipesArray={recipesArray} />
