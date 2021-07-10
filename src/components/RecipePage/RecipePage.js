@@ -3,13 +3,13 @@ import marked from "marked";
 import "./RecipePage.css";
 import { makeStyles, Grid } from "@material-ui/core";
 import { useParams } from "react-router";
-import Button from '@material-ui/core/Button';
-
+import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles(() => ({
   container: {
-    border: "3px solid black",
+    // border: "3px solid black",
     padding: "10px",
+    margin: "20px 0",
   },
   item: {
     padding: "10px",
@@ -36,7 +36,7 @@ export default function RecipePage(props, { isLoading }) {
   return (
     <Grid container className={classes.container}>
       <Grid item xs={12} className={classes.item}>
-        { singleRecipe ? (
+        {singleRecipe ? (
           <div className="recipe_style">
             <div className="hhh">{singleRecipe.name}</div>
             {singleRecipe.image && (
@@ -46,9 +46,13 @@ export default function RecipePage(props, { isLoading }) {
                 alt={singleRecipe.name}
               />
             )}
-              <Button variant="contained" color="secondary" className={classes.button}>
-                Order this recipe now!
-              </Button>
+            <Button
+              variant="contained"
+              color="secondary"
+              className={classes.button}
+            >
+              Order this recipe now!
+            </Button>
             <h2 className="hhh">ingredients</h2>
             <section className="ingredients">
               {singleRecipe.ingredients.map((ingredient) => (
@@ -58,12 +62,12 @@ export default function RecipePage(props, { isLoading }) {
             </section>
             <h2 className="hhh">Description</h2>
             {
-            <div>
-              <section
-                className="description_text"
-                dangerouslySetInnerHTML={{ __html: postDescription }}
-              />
-             </div>
+              <div>
+                <section
+                  className="description_text"
+                  dangerouslySetInnerHTML={{ __html: postDescription }}
+                />
+              </div>
             }
           </div>
         ) : (
@@ -73,4 +77,3 @@ export default function RecipePage(props, { isLoading }) {
     </Grid>
   );
 }
-

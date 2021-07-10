@@ -1,15 +1,9 @@
-.socialIcons {
-  display: flex;
-  align-items: center;
-}
-
-
-
 #scroll {
   bottom: 70px;
   height: 50px;
   width: 50px;
   box-shadow: 0 4px 4px 0 black, 0 4px 4px 0 grey;
+  margin-bottom: 8px;
   /* -webkit-animation: seconds 5s forwards;
   -webkit-animation-iteration-count: 1;
   -webkit-animation-delay: 5s;

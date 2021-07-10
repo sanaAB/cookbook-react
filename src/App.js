@@ -1,5 +1,5 @@
 import "./App.css";
-import axios from 'axios'
+import axios from "axios";
 import { useState, useEffect } from "react";
 import Home from "./components/Home/Home";
 import Recipe from "./components/Recipe/Recipe";
@@ -16,20 +16,20 @@ function App() {
 
   useEffect(() => {
     async function fetchRecipes() {
-    setIsLoading(true);
-    try {
-      axios.get("http://localhost:8080/api").then((result) => {
-        const data = result.data;
-        setRecipes(data);
-        console.log(data);
-        setIsLoading(false);
-      });
-    } catch (error) {
-      alert("No results");
+      setIsLoading(true);
+      try {
+        axios.get("http://localhost:8080/api").then((result) => {
+          const data = result.data;
+          setRecipes(data);
+          console.log(data);
+          setIsLoading(false);
+        });
+      } catch (error) {
+        alert("No results");
+      }
     }
-  }
-  fetchRecipes();
-}, []);
+    fetchRecipes();
+  }, []);
 
   return (
     <Router>
@@ -55,10 +55,10 @@ function App() {
               <Recipe recipesArray={recipesArray} />
             </Route>
             <Route exact path="/breakfast/:slug">
-              <RecipePage recipesArray={recipesArray} isLoading={isLoading}/>
+              <RecipePage recipesArray={recipesArray} isLoading={isLoading} />
             </Route>
             <Route exact path="/lunch/:slug">
-              <RecipePage recipesArray={recipesArray} isLoading={isLoading}/>
+              <RecipePage recipesArray={recipesArray} isLoading={isLoading} />
             </Route>
             <Route exact path="/dinner/:slug">
               <RecipePage recipesArray={recipesArray} isLoading={isLoading} />
