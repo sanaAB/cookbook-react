@@ -40,7 +40,8 @@ export default function RecipePage(props) {
   const [component, setComponent] = useState(false);
   const classes = useStyles();
   console.log(props);
-  const { slug } = useParams();
+  const { slug, category } = useParams();
+
   let singleRecipe;
   //check if the array is not empty
   props.recipesArray &&
@@ -119,7 +120,7 @@ export default function RecipePage(props) {
             xl={12}
             className={classes.item}
           >
-            <Link to="/order">
+            <Link to={`/${category}/${singleRecipe.slug}/order`}>
               <Button
                 variant="contained"
                 color="secondary"
@@ -143,10 +144,7 @@ export default function RecipePage(props) {
             <section className="ingredients__section">
               {singleRecipe.ingredients.map((ingredient) => (
                 <div className="ingredients">
-                  <li>
-                    <input type="checkbox"></input>
-                    {ingredient}
-                  </li>
+                  <li>{ingredient}</li>
                 </div>
               ))}
             </section>

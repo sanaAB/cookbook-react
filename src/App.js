@@ -53,20 +53,14 @@ function App() {
             <Route exact path="/About">
               <About />
             </Route>
-            <Route exact path="/Order">
-              <Order />
-            </Route>
             <Route exact path="/:category">
               <Recipe recipesArray={recipesArray} />
             </Route>
-            <Route exact path="/breakfast/:slug">
+            <Route exact path="/:category/:slug">
               <RecipePage recipesArray={recipesArray} isLoading={isLoading} />
             </Route>
-            <Route exact path="/lunch/:slug">
-              <RecipePage recipesArray={recipesArray} isLoading={isLoading} />
-            </Route>
-            <Route exact path="/dinner/:slug">
-              <RecipePage recipesArray={recipesArray} isLoading={isLoading} />
+            <Route exact path="/:category/:slug/order">
+              <Order recipesArray={recipesArray} isLoading={isLoading} />
             </Route>
           </Switch>
         )}
