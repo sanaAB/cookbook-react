@@ -10,7 +10,11 @@ import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { useParams } from "react-router";
 import Button from '@material-ui/core/Button';
+
+import { Link } from "react-router-dom";
+
 import { CheckBox } from "@material-ui/icons";
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -62,6 +66,7 @@ export default function RecipePage(props) {
                 alt={singleRecipe.name}
               />
             )}
+
               <Button variant="contained" color="secondary" className={classes.button} onClick={ ()=> setComponent(true)} onKeyPress={()=> setComponent(false)}>
                 Order this recipe now!
               </Button>
@@ -89,6 +94,7 @@ export default function RecipePage(props) {
             >
               Order this recipe now!
             </Button>
+
             <h2 className="hhh">ingredients</h2>
             <section className="ingredients__section">
               {singleRecipe.ingredients.map((ingredient) => (

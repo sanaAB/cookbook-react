@@ -7,7 +7,11 @@ import HomeIcon from "@material-ui/icons/Home";
 import ContactPhoneIcon from "@material-ui/icons/ContactPhone";
 import { Link } from "react-router-dom";
 import IconButton from "@material-ui/core/IconButton";
+
+import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
+
 import Image from "./food5.jpg";
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -62,7 +66,9 @@ export default function SearchAppBar() {
     <div className={classes.root}>
       <AppBar color="inherit" className={classes.navbar} position="static">
         <Toolbar>
-          <img className="logo" src="/jls-logo3.PNG" alt="logo" edge="start" />
+          <Link to="/">
+            <img className="logo" src="/jls-logo3.PNG" alt="logo" edge="start" />
+          </Link>
           <span className={classes.title}>
             “I cook with wine, sometimes I even add it to the food.” ― W.C.
             Fields
@@ -78,6 +84,14 @@ export default function SearchAppBar() {
                 <ContactPhoneIcon className={classes.icon} />
               </IconButton>
             </Link>
+
+            <Link to="/order">
+              <IconButton color="inherit" edge="end">
+                <ShoppingBasketIcon className={classes.icon} />
+              </IconButton>
+            </Link>
+            
+
           </div>
         </Toolbar>
       </AppBar>

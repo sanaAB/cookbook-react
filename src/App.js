@@ -9,6 +9,7 @@ import Footer from "./components/Footer/Footer";
 import Contact from "./components/Contact/Contact";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import About from "./components/About/About";
+import Order from "./components/Order/Order";
 
 function App() {
   const [recipesArray, setRecipes] = useState([]);
@@ -50,6 +51,9 @@ function App() {
             </Route>
             <Route exact path="/About">
               <About />
+            </Route>
+            <Route exact path="/Order">
+              <Order />
             </Route>
             <Route exact path="/:category">
               <Recipe recipesArray={recipesArray} />

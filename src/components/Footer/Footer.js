@@ -3,6 +3,7 @@ import "./Footer.css";
 
 import { makeStyles, Grid } from "@material-ui/core";
 import AppBar from "@material-ui/core/AppBar";
+
 import Toolbar from "@material-ui/core/Toolbar";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
