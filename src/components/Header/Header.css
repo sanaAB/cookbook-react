@@ -6,7 +6,7 @@
   opacity: 40%;
   object-fit: cover;
   contain: content;
-  background-image:url("./food.jpg");
+  /* background-image: url("./food4.jpg"); */
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
@@ -34,14 +34,15 @@
 #slogan {
   margin: 0 auto;
   padding-bottom: 10px;
+  letter-spacing: 4px;
 }
 .bg-image {
-  /* The image used 
+  /* The image used
 */
   /* Add the blur effect */
-  background-image: url("./food.jpg");
-  filter: blur(4px);
-  -webkit-filter: blur(5px);
+  background-image: url("./food6.jpg");
+  filter: blur(3px);
+  -webkit-filter: blur(4px);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -57,7 +58,7 @@
   line-height: normal;
   text-align: center;
   text-shadow: 2.5px 3px 3px #fff;
-  background-color: rgba(75, 70, 80, 0.3); /* Black w/opacity/see-through */
+  /* background-color: rgba(245, 245, 220, 0.1); */
   position: absolute;
   top: 50%;
   left: 50%;

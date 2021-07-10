@@ -22,8 +22,9 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: theme.typography.fontWeightRegular,
   },
   container: {
-    border: "3px solid black",
+    // border: "3px solid black",
     padding: "10px",
+    margin: "20px 0",
   },
   item: {
     padding: "10px",
@@ -51,7 +52,7 @@ export default function RecipePage(props) {
   return (
     <Grid container className={classes.container}>
       <Grid item xs={12} className={classes.item}>
-        { singleRecipe ? (
+        {singleRecipe ? (
           <div className="recipe_style">
             <div className="hhh">{singleRecipe.name}</div>
             {singleRecipe.image && (
@@ -81,6 +82,13 @@ export default function RecipePage(props) {
                </div>
               )}
            
+            <Button
+              variant="contained"
+              color="secondary"
+              className={classes.button}
+            >
+              Order this recipe now!
+            </Button>
             <h2 className="hhh">ingredients</h2>
             <section className="ingredients__section">
               {singleRecipe.ingredients.map((ingredient) => (
@@ -89,12 +97,12 @@ export default function RecipePage(props) {
             </section>
             <h2 className="hhh">Description</h2>
             {
-            <div>
-              <section
-                className="description_text"
-                dangerouslySetInnerHTML={{ __html: postDescription }}
-              />
-             </div>
+              <div>
+                <section
+                  className="description_text"
+                  dangerouslySetInnerHTML={{ __html: postDescription }}
+                />
+              </div>
             }
           </div>
         ) : (
@@ -104,4 +112,3 @@ export default function RecipePage(props) {
     </Grid>
   );
 }
-

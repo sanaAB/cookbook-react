@@ -8,7 +8,7 @@ import CardActionArea from "@material-ui/core/CardActionArea";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import { Link } from "react-router-dom";
-import asparagusImage from "./asparagus.jpg";
+import asparagusImage from "./asparagus-blurry2.jpg";
 
 const useStyles = makeStyles({
   root: {

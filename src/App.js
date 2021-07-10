@@ -28,9 +28,8 @@ function App() {
     } catch (error) {
       alert("No results");
     }
-  }
-  fetchRecipes();
-}, []);
+    fetchRecipes();
+  }, []);
 
   return (
     <Router>
@@ -56,10 +55,10 @@ function App() {
               <Recipe recipesArray={recipesArray} />
             </Route>
             <Route exact path="/breakfast/:slug">
-              <RecipePage recipesArray={recipesArray} isLoading={isLoading}/>
+              <RecipePage recipesArray={recipesArray} isLoading={isLoading} />
             </Route>
             <Route exact path="/lunch/:slug">
-              <RecipePage recipesArray={recipesArray} isLoading={isLoading}/>
+              <RecipePage recipesArray={recipesArray} isLoading={isLoading} />
             </Route>
             <Route exact path="/dinner/:slug">
               <RecipePage recipesArray={recipesArray} isLoading={isLoading} />
