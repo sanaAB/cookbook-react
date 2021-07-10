@@ -29,6 +29,7 @@ function App() {
     } catch (error) {
       alert("No results");
     }
+    }
     fetchRecipes();
   }, []);
 
