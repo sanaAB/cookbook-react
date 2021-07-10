@@ -1,4 +1,5 @@
 import React from "react";
+import "./Order.css";
 import Button from "@material-ui/core/Button";
 import { makeStyles, Grid } from "@material-ui/core";
 import Dialog from "@material-ui/core/Dialog";
@@ -13,6 +14,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
 import Switch from "@material-ui/core/Switch";
 import TextField from "@material-ui/core/TextField";
+import { useParams } from "react-router";
 
 const useStyles = makeStyles((theme) => ({
   form: {
@@ -30,11 +32,20 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Orders() {
+export default function Orders(props) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const [fullWidth, setFullWidth] = React.useState(true);
   const [maxWidth, setMaxWidth] = React.useState("sm");
+  const { slug, category } = useParams();
+
+  let singleRecipe;
+  props.recipesArray &&
+    props.recipesArray.map((recipe) => {
+      if (recipe.slug === slug) {
+        return (singleRecipe = recipe);
+      }
+    });
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -55,17 +66,37 @@ export default function Orders() {
   return (
     <div>
       <h1>Personalise Your JLS Box</h1>
-
-      <ul>
-        <li>Eggs</li>
-        <li>oil</li>
-        <li>Flour</li>
-        <li>Black Pepper</li>
-        <li>Salt</li>
-        <li>Butter</li>
-        <li>Baked Beans</li>
-      </ul>
-      <h3>The final price is ...</h3>
+      <h2>For how many people?</h2>
+      <div className="custom-select">
+        <select>
+          <option value="1">Number of people</option>
+          <option value="2">1</option>
+          <option value="3">2</option>
+          <option value="4">3</option>
+          <option value="5">4</option>
+          <option value="6">5</option>
+          <option value="7">6</option>
+          <option value="8">7</option>
+          <option value="9">8</option>
+          <option value="10">9</option>
+        </select>
+      </div>
+      <h2>Please select the ingredients you want to order</h2>
+      {singleRecipe ? (
+        <section className="ingredients__section">
+          {singleRecipe.ingredients.map((ingredient) => (
+            <div className="ingredients">
+              <li>
+                <input type="checkbox"></input>
+                {ingredient}
+              </li>
+            </div>
+          ))}
+        </section>
+      ) : (
+        <h1> Unable to load recipe</h1>
+      )}
+      <h2>Total price</h2>
       <h3 className="price">€19.99</h3>
       <React.Fragment>
         <Button variant="contained" color="secondary" onClick={handleClickOpen}>

@@ -7,10 +7,9 @@ import HomeIcon from "@material-ui/icons/Home";
 import ContactPhoneIcon from "@material-ui/icons/ContactPhone";
 import { Link } from "react-router-dom";
 import IconButton from "@material-ui/core/IconButton";
-
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
-
 import Image from "./food5.jpg";
+import TranslateIcon from "@material-ui/icons/Translate";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -93,10 +92,9 @@ export default function SearchAppBar() {
                 <ContactPhoneIcon className={classes.icon} />
               </IconButton>
             </Link>
-
-            <Link to="/order">
+            <Link>
               <IconButton color="inherit" edge="end">
-                <ShoppingBasketIcon className={classes.icon} />
+                <TranslateIcon className={classes.icon} />
               </IconButton>
             </Link>
           </div>
