@@ -1,8 +1,4 @@
 import "./App.css";
-<<<<<<< HEAD
-=======
-import axios from 'axios'
->>>>>>> b1b0df765e3466de6cde585100d0fad8bb678e6f
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Home from "./components/Home/Home";
@@ -22,11 +18,8 @@ function App() {
     async function fetchRecipes() {
     setIsLoading(true);
     try {
-<<<<<<< HEAD
       await axios.get("http://localhost:8080/api").then((result) => {
-=======
-      axios.get("http://localhost:8080/api").then((result) => {
->>>>>>> b1b0df765e3466de6cde585100d0fad8bb678e6f
+
         const data = result.data;
         setRecipes(data);
         console.log(data);
