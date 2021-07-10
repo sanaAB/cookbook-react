@@ -1,6 +1,6 @@
 import "./App.css";
-import axios from "axios";
 import { useState, useEffect } from "react";
+import axios from "axios";
 import Home from "./components/Home/Home";
 import Recipe from "./components/Recipe/Recipe";
 import RecipePage from "./components/RecipePage/RecipePage";
@@ -16,17 +16,17 @@ function App() {
 
   useEffect(() => {
     async function fetchRecipes() {
-      setIsLoading(true);
-      try {
-        axios.get("http://localhost:8080/api").then((result) => {
-          const data = result.data;
-          setRecipes(data);
-          console.log(data);
-          setIsLoading(false);
-        });
-      } catch (error) {
-        alert("No results");
-      }
+    setIsLoading(true);
+    try {
+      await axios.get("http://localhost:8080/api").then((result) => {
+
+        const data = result.data;
+        setRecipes(data);
+        console.log(data);
+        setIsLoading(false);
+      });
+    } catch (error) {
+      alert("No results");
     }
     fetchRecipes();
   }, []);
