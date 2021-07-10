@@ -10,17 +10,17 @@
   margin-bottom: 25px;
 }
 .ingredients {
-  display: flex;
+  /* display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-direction: row;
+  flex-direction: row; */
   list-style: none;
 }
-.ingredients__section{
+/* .ingredients__section{
   display: flex;
   justify-content: space-around;
   flex-direction: column;
-}
+} */
 .description_text {
   display: flex;
   justify-content: space-around;

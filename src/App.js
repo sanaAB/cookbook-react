@@ -17,17 +17,17 @@ function App() {
 
   useEffect(() => {
     async function fetchRecipes() {
-    setIsLoading(true);
-    try {
-      await axios.get("http://localhost:8080/api").then((result) => {
-
-        const data = result.data;
-        setRecipes(data);
-        console.log(data);
-        setIsLoading(false);
-      });
-    } catch (error) {
-      alert("No results");
+      setIsLoading(true);
+      try {
+        await axios.get("http://localhost:8080/api").then((result) => {
+          const data = result.data;
+          setRecipes(data);
+          console.log(data);
+          setIsLoading(false);
+        });
+      } catch (error) {
+        alert("No results");
+      }
     }
     fetchRecipes();
   }, []);

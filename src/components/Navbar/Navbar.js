@@ -8,10 +8,9 @@ import ContactPhoneIcon from "@material-ui/icons/ContactPhone";
 import { Link } from "react-router-dom";
 import IconButton from "@material-ui/core/IconButton";
 
-import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
+import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 
 import Image from "./food5.jpg";
-
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -54,6 +53,11 @@ const useStyles = makeStyles((theme) => ({
     "&:hover": {
       transform: "scale(1.2)",
     },
+    [theme.breakpoints.down(350)]: {
+      height: 30,
+      width: 30,
+      padding: 3,
+    },
     // boxShadow:
     // "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
   },
@@ -67,7 +71,12 @@ export default function SearchAppBar() {
       <AppBar color="inherit" className={classes.navbar} position="static">
         <Toolbar>
           <Link to="/">
-            <img className="logo" src="/jls-logo3.PNG" alt="logo" edge="start" />
+            <img
+              className="logo"
+              src="/jls-logo3.PNG"
+              alt="logo"
+              edge="start"
+            />
           </Link>
           <span className={classes.title}>
             “I cook with wine, sometimes I even add it to the food.” ― W.C.
@@ -90,8 +99,6 @@ export default function SearchAppBar() {
                 <ShoppingBasketIcon className={classes.icon} />
               </IconButton>
             </Link>
-            
-
           </div>
         </Toolbar>
       </AppBar>

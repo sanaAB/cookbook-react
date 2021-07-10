@@ -66,6 +66,10 @@ const useStyles = makeStyles((theme) => ({
     "&:hover": {
       transform: "scale(1.2)",
     },
+    [theme.breakpoints.down(320)]: {
+      height: 30,
+      width: 30,
+    },
   },
   about: {
     flexGrow: 1,
@@ -73,8 +77,12 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "20px",
     fontWeight: "bold",
     letterSpacing: "1px",
-    [theme.breakpoints.down(320)]: {
-      display: "none",
+    // [theme.breakpoints.down(320)]: {
+    //   display: "flex",
+    //   justifyContent: "end",
+    // },
+    [theme.breakpoints.down(300)]: {
+      fontSize: "15px",
     },
     "&:hover": {
       transform: "scale(1.2)",
