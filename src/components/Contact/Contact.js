@@ -4,17 +4,45 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Grid } from "@material-ui/core";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+import Image from "./pancakes.jpg";
 
 export default function Contact() {
   const useStyles = makeStyles((theme) => ({
     root: {
       border: 0,
       color: "white",
-      height: 400,
+      minHeight: 650,
       padding: "0 30px",
       flexGrow: 1,
-      background: "linear-gradient(45deg, #f9f6f1 5%, #fcf0e4 60%)",
-
+      backgroundColor: "lightgrey",
+      backgroundImage: `url(${Image})`,
+      backgroundSize: "100%",
+      backgroundRepeat: "no-repeat",
+      [theme.breakpoints.down(370)]: {
+        backgroundSize: "100%",
+        minHeight: 590,
+        flexGrow: 0,
+      },
+      [theme.breakpoints.up(370)]: {
+        backgroundSize: "100%",
+        minHeight: 570,
+        flexGrow: 0,
+      },
+      [theme.breakpoints.up(400)]: {
+        backgroundSize: "100%",
+        minHeight: 590,
+        flexGrow: 0,
+      },
+      [theme.breakpoints.up(650)]: {
+        backgroundSize: "100%",
+        minHeight: 600,
+        flexGrow: 0,
+      },
+      [theme.breakpoints.up(800)]: {
+        backgroundSize: "100%",
+        minHeight: 600,
+        flexGrow: 0,
+      },
       [theme.breakpoints.up("sm")]: {
         display: "block",
       },

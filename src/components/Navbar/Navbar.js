@@ -7,7 +7,11 @@ import HomeIcon from "@material-ui/icons/Home";
 import ContactPhoneIcon from "@material-ui/icons/ContactPhone";
 import { Link } from "react-router-dom";
 import IconButton from "@material-ui/core/IconButton";
+
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
+
+import Image from "./food5.jpg";
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,7 +20,16 @@ const useStyles = makeStyles((theme) => ({
   navbar: {
     top: 0,
     bottom: "auto",
-    // background: "linear-gradient(45deg, #f9da9f 5%, #ffedcb 60%)",
+    backgroundImage: `url(${Image})`,
+    backgroundSize: "130%",
+    [theme.breakpoints.up(600)]: {
+      backgroundImage: `url(${Image})`,
+      backgroundSize: "110%",
+    },
+    [theme.breakpoints.up(800)]: {
+      backgroundImage: `url(${Image})`,
+      backgroundSize: "300%",
+    },
   },
   title: {
     flexGrow: 30,
@@ -38,6 +51,9 @@ const useStyles = makeStyles((theme) => ({
     height: 40,
     width: 40,
     padding: 5,
+    "&:hover": {
+      transform: "scale(1.2)",
+    },
     // boxShadow:
     // "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
   },
@@ -68,12 +84,14 @@ export default function SearchAppBar() {
                 <ContactPhoneIcon className={classes.icon} />
               </IconButton>
             </Link>
+
             <Link to="/order">
               <IconButton color="inherit" edge="end">
                 <ShoppingBasketIcon className={classes.icon} />
               </IconButton>
             </Link>
             
+
           </div>
         </Toolbar>
       </AppBar>

@@ -1,13 +1,14 @@
 .post {
-  margin: 40px 10px;
+  margin: 50px 10px;
   font-family: "Cookie", cursive;
   font-size: 35px;
+  min-height: 400px;
 }
 
 .recipes_list {
   display: flex;
   justify-content: space-around;
-  padding: 10px;
+  padding: 15px;
   /* border: 1px solid grey; */
   /* margin-bottom: 10px; */
   list-style-type: none;
@@ -30,6 +31,7 @@
   margin-left: auto;
   margin-right: auto;
   border-radius: 100%;
+  box-shadow: 0 4px 5px 4px lightgrey;
 }
 
 .table-img img {
@@ -55,6 +57,6 @@ a {
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
-    margin-bottom: 70px;
+    margin-bottom: 300px;
   }
 }
