@@ -4,6 +4,7 @@ import "./RecipePage.css";
 import { makeStyles, Grid } from "@material-ui/core";
 import { useParams } from "react-router";
 import Button from '@material-ui/core/Button';
+import { Link } from "react-router-dom";
 
 
 const useStyles = makeStyles(() => ({
@@ -46,9 +47,11 @@ export default function RecipePage(props, { isLoading }) {
                 alt={singleRecipe.name}
               />
             )}
+            <Link to="/order">
               <Button variant="contained" color="secondary" className={classes.button}>
                 Order this recipe now!
               </Button>
+              </Link>
             <h2 className="hhh">ingredients</h2>
             <section className="ingredients">
               {singleRecipe.ingredients.map((ingredient) => (

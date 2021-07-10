@@ -1,8 +1,8 @@
 import React from "react";
 import "./About.css";
-import { Button } from '@material-ui/core';
-import GitHubIcon from '@material-ui/icons/GitHub';
-import { Link } from "react-router-dom";
+//import { Button } from '@material-ui/core';
+//import GitHubIcon from '@material-ui/icons/GitHub';
+//import { Link } from "react-router-dom";
 
 
 export default function About() {
