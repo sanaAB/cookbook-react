@@ -67,20 +67,14 @@ export default function Orders(props) {
     <div>
       <h1>Personalise Your JLS Box</h1>
       <h2>For how many people?</h2>
-      <div className="custom-select">
-        <select>
-          <option value="1">Number of people</option>
-          <option value="2">1</option>
-          <option value="3">2</option>
-          <option value="4">3</option>
-          <option value="5">4</option>
-          <option value="6">5</option>
-          <option value="7">6</option>
-          <option value="8">7</option>
-          <option value="9">8</option>
-          <option value="10">9</option>
-        </select>
-      </div>
+      <InputLabel id="demo-simple-select-label">Number of People</InputLabel>
+      <Select labelId="demo-simple-select-label" id="demo-simple-select">
+        <MenuItem value={1}>One</MenuItem>
+        <MenuItem value={2}>Two</MenuItem>
+        <MenuItem value={3}>Three</MenuItem>
+        <MenuItem value={4}>Four</MenuItem>
+        <MenuItem value={5}>Five</MenuItem>
+      </Select>
       <h2>Please select the ingredients you want to order</h2>
       {singleRecipe ? (
         <section className="ingredients__section">
