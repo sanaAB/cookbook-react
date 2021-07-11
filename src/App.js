@@ -10,6 +10,17 @@ import Contact from "./components/Contact/Contact";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import About from "./components/About/About";
 import Order from "./components/Order/Order";
+import { useLocation } from "react-router-dom";
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  console.log(window.scrollTo);
+  return null;
+}
 
 function App() {
   const [recipesArray, setRecipes] = useState([]);
@@ -34,6 +45,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <div className="App">
         <SearchAppBar />
         {isLoading ? (

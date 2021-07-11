@@ -1,12 +1,11 @@
 .intro-image {
   padding: 1px;
-  /* border: 1px solid rgb(100, 98, 98); */
+  border: 5px solid rgb(100, 98, 98);
   height: 260px;
   width: 100%;
   opacity: 40%;
   object-fit: cover;
   contain: content;
-  /* background-image: url("./food4.jpg"); */
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
@@ -27,10 +26,7 @@
   top: 0;
   left: 0;
 }
-.section2 {
-  position: relative;
-  /* margin-bottom: 130px; */
-}
+
 #slogan {
   margin: 0 auto;
   padding-bottom: 10px;
