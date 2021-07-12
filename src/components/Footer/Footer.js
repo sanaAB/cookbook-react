@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     bottom: "0px",
     width: "100%",
     left: "0px",
-    [theme.breakpoints.up(360)]: {
+    [theme.breakpoints.up(380)]: {
       position: "fixed",
     },
   },
@@ -34,7 +34,6 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   appBar: {
-    // maxHeight: 70,
     color: "black",
     position: "static",
     backgroundImage: `url(${Image})`,
@@ -42,12 +41,10 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up(600)]: {
       backgroundImage: `url(${Image})`,
       backgroundSize: "110%",
-      // position: "static",
     },
     [theme.breakpoints.up(800)]: {
       backgroundImage: `url(${Image})`,
       backgroundSize: "300%",
-      // position: "static",
     },
   },
   socialIcons: {

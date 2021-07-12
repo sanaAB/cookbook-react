@@ -19,9 +19,11 @@ const useStyles = makeStyles({
   },
   media: {
     height: 150,
+    "&:hover": {
+      transform: "scale(1.1)",
+    },
   },
 });
-
 
 export default function Home() {
   const classes = useStyles();

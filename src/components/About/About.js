@@ -39,7 +39,7 @@ export default function About() {
         <p className={classes.p}>
           Our passion for food at JLS has made us experts in the art of food
           blogging, food photography, videography, food styling with a mission
-          of helpng others cook their favorite fresh meals by themselves from
+          of helping others cook their favorite fresh meals by themselves from
           its raw state to its plating.
         </p>
       </div>
@@ -64,11 +64,10 @@ export default function About() {
         <h2 className="title">Tech-Stack</h2>
         <ul>
           <li>React</li>
-          <li>Material UI</li>
           <li>Node.js</li>
-          <li>MongoDB</li>
           <li>Express.js</li>
-          <li>Contentful</li>
+          <li>Material UI</li>
+          <li>MongoDB</li>
           <li>Vercel</li>
         </ul>
       </div>
