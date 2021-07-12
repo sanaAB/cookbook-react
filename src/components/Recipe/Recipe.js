@@ -18,6 +18,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundRepeat: "no-repeat",
     [theme.breakpoints.up(1000)]: {
       backgroundColor: "rgba(224, 222, 218, 1)",
+      minHeight: 1300,
     },
   },
   container: {
@@ -25,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: "120px",
     paddingRight: "20px",
     fontFamily: "Cookie, cursive",
-    fontSize: "30px",
+    fontSize: "25px",
   },
   title: {
     letterSpacing: "2px",
@@ -44,6 +45,9 @@ const useStyles = makeStyles((theme) => ({
   },
   cover: {
     height: 140,
+    "&:hover": {
+      transform: "scale(1.1)",
+    },
   },
 }));
 

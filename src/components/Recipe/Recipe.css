@@ -1,46 +1,4 @@
-/* .recipeImage {
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 5px;
-  width: auto;
-  height: 100px;
-  box-shadow: 0 0 2px 1px grey;
-} */
-
-/* .table-img {
-  height: 150px;
-  width: 150px;
-  overflow: hidden;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 100%;
-  box-shadow: 0 4px 5px 4px lightgrey;
-}
-
-.table-img img {
-  max-height: 140px;
-  max-width: none;
-  min-width: 100%;
-  min-height: 100px;
-} */
-
 a {
   text-decoration: none;
   color: black;
 }
-
-/* @media only screen and (min-width: 450px) {
-  .recipeImage {
-    height: auto;
-    width: 100px;
-  }
-  .post {
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 100%;
-    margin-bottom: 300px;
-  }
-} */

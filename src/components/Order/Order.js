@@ -18,12 +18,14 @@ import CardMedia from "@material-ui/core/CardMedia";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    marginBottom: "150px",
-    marginTop: "50px",
+    flexGrow: 1,
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    marginTop: "50px",
+    marginBottom: "100px",
   },
+
   card: {
     width: 500,
     maxWidth: 700,
@@ -41,20 +43,15 @@ const useStyles = makeStyles((theme) => ({
     background: "black",
     color: "white",
     padding: "5px 10px",
+    "&:hover": {
+      transform: "scale(1.1)",
+    },
   },
-  // form: {
-  //   display: "flex",
-  //   flexDirection: "column",
-  //   margin: "auto",
-  //   width: "fit-content",
-  // },
-  // formControl: {
-  //   marginTop: theme.spacing(2),
-  //   minWidth: 120,
-  // },
-  // formControlLabel: {
-  //   marginTop: theme.spacing(1),
-  // },
+  button: {
+    "&:hover": {
+      transform: "scale(1.1)",
+    },
+  },
 }));
 
 function BackButton({ children }) {
@@ -107,7 +104,7 @@ export default function Orders(props) {
             <MenuItem value={5}>Five</MenuItem>
           </Select>
           <h2 className={classes.title}>
-            Please select the needed ingredients
+            Please select the ingredients you need
           </h2>
           {singleRecipe ? (
             <section>
@@ -127,6 +124,7 @@ export default function Orders(props) {
           <h3>€19.99</h3>
           <React.Fragment>
             <Button
+              className={classes.button}
               variant="contained"
               color="secondary"
               onClick={handleClickOpen}
