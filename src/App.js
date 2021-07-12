@@ -40,7 +40,6 @@ function App() {
         alert("No results");
       }
     }
-    }
     fetchRecipes();
   }, []);
 
