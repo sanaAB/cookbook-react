@@ -7,9 +7,14 @@ import HomeIcon from "@material-ui/icons/Home";
 import ContactPhoneIcon from "@material-ui/icons/ContactPhone";
 import { Link } from "react-router-dom";
 import IconButton from "@material-ui/core/IconButton";
-import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import Image from "./food5.jpg";
 import TranslateIcon from "@material-ui/icons/Translate";
+import Select from "@material-ui/core/Select";
+import Dialog from "@material-ui/core/Dialog";
+import DialogContent from "@material-ui/core/DialogContent";
+import InputLabel from "@material-ui/core/InputLabel";
+import Input from "@material-ui/core/Input";
+import FormControl from "@material-ui/core/FormControl";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -18,6 +23,8 @@ const useStyles = makeStyles((theme) => ({
   navbar: {
     top: 0,
     bottom: "auto",
+    boxShadow: "0 4px 5px 0 grey, 0 6px 20px 10px lightgrey",
+    marginBottom: "5px",
     backgroundImage: `url(${Image})`,
     backgroundSize: "130%",
     [theme.breakpoints.up(600)]: {
@@ -35,6 +42,8 @@ const useStyles = makeStyles((theme) => ({
     fontSize: 23,
     color: "black",
     display: "none",
+    margin: "7px 35px",
+    paddingLeft: "90px",
     [theme.breakpoints.up("sm")]: {
       display: "block",
     },
@@ -46,6 +55,7 @@ const useStyles = makeStyles((theme) => ({
   },
   icon: {
     color: "black",
+    cursor: "pointer",
     height: 40,
     width: 40,
     padding: 5,
@@ -57,13 +67,26 @@ const useStyles = makeStyles((theme) => ({
       width: 30,
       padding: 3,
     },
-    // boxShadow:
-    // "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
   },
 }));
 
 export default function SearchAppBar() {
   const classes = useStyles();
+
+  const [open, setOpen] = React.useState(false);
+  const [language, setLanguage] = React.useState("");
+
+  const handleChange = (event) => {
+    setLanguage(Number(event.target.value) || "");
+  };
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   return (
     <div className={classes.root}>
@@ -92,11 +115,31 @@ export default function SearchAppBar() {
                 <ContactPhoneIcon className={classes.icon} />
               </IconButton>
             </Link>
-            <Link>
-              <IconButton color="inherit" edge="end">
-                <TranslateIcon className={classes.icon} />
-              </IconButton>
-            </Link>
+
+            <IconButton onClick={handleClickOpen} color="inherit" edge="end">
+              <TranslateIcon className={classes.icon} />
+            </IconButton>
+            <Dialog open={open} onClose={handleClose}>
+              <DialogContent>
+                <form className={classes.container}>
+                  <FormControl className={classes.formControl}>
+                    <InputLabel htmlFor="demo-dialog-native">
+                      Language
+                    </InputLabel>
+                    <Select
+                      native
+                      value={language}
+                      onChange={handleChange}
+                      input={<Input id="demo-dialog-native" />}
+                    >
+                      <option value={1}>English</option>
+                      <option value={2}>German</option>
+                      <option value={3}>Arabic</option>
+                    </Select>
+                  </FormControl>
+                </form>
+              </DialogContent>
+            </Dialog>
           </div>
         </Toolbar>
       </AppBar>

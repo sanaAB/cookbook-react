@@ -3,7 +3,8 @@
   padding-top: 30px;
   display: flex;
   justify-content: center;
-  bottom: 80px;
+  bottom: 140px;
+  cursor: pointer;
 }
 
 .home {

@@ -1,9 +1,7 @@
 import React from "react";
 import "./Footer.css";
-
 import { makeStyles, Grid } from "@material-ui/core";
 import AppBar from "@material-ui/core/AppBar";
-
 import Toolbar from "@material-ui/core/Toolbar";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
@@ -15,13 +13,14 @@ import Image from "./food5.jpg";
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    // border: "3px solid black",
     position: "static",
     top: "auto",
     bottom: "0px",
-    // display: "block",
     width: "100%",
     left: "0px",
+    [theme.breakpoints.up(360)]: {
+      position: "fixed",
+    },
   },
   item: {
     fontSize: 15,
@@ -43,12 +42,12 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up(600)]: {
       backgroundImage: `url(${Image})`,
       backgroundSize: "110%",
-      position: "static",
+      // position: "static",
     },
     [theme.breakpoints.up(800)]: {
       backgroundImage: `url(${Image})`,
       backgroundSize: "300%",
-      position: "static",
+      // position: "static",
     },
   },
   socialIcons: {
@@ -63,6 +62,7 @@ const useStyles = makeStyles((theme) => ({
   socialIcon: {
     marginLeft: "5px",
     zIndex: 1,
+    cursor: "pointer",
     "&:hover": {
       transform: "scale(1.2)",
     },
@@ -74,15 +74,12 @@ const useStyles = makeStyles((theme) => ({
   about: {
     flexGrow: 1,
     fontFamily: "Cookie, cursive",
-    fontSize: "20px",
+    fontSize: "15px",
     fontWeight: "bold",
     letterSpacing: "1px",
-    // [theme.breakpoints.down(320)]: {
-    //   display: "flex",
-    //   justifyContent: "end",
-    // },
-    [theme.breakpoints.down(300)]: {
-      fontSize: "15px",
+    cursor: "pointer",
+    [theme.breakpoints.down(320)]: {
+      fontSize: "10px",
     },
     "&:hover": {
       transform: "scale(1.2)",
@@ -121,7 +118,7 @@ export default function Footer() {
           <ScrollToTop smooth id="scroll" className={classes.scroll} />
           <Grid item xs={4} sm={4} xl={5}>
             <Link to="/About">
-              <Button type="submit">
+              <Button size="small" variant="text" type="submit">
                 <span className={classes.about}>About</span>
               </Button>
             </Link>
